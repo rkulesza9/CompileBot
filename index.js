@@ -1,15 +1,15 @@
-const Discord = require("Discord");
-const Bot = Discord.client();
-const token = "Njk4NDIyMDk0NTcyMjkwMDk4.XqdICQ.rTvA62jCxiJDpmk0wl6o4DoPKOM";
+const Discord = require("Discord.js");
+const Bot = new Discord.Client();
+const Token = "Njk4NDIyMDk0NTcyMjkwMDk4.XqdICQ.rTvA62jCxiJDpmk0wl6o4DoPKOM";
 
-bot.login(token);
-bot.on('ready', function(){
-  alert("logged in");
+Bot.login(Token);
+Bot.on('ready', function(){
+  console.log("logged in");
 });
 
-bot.on('message', function(msg)){
-  var split = msg.split(" ");
+Bot.on('message', function(msg){
+  var split = msg.content.split(" ");
   if(split[0] == "+compilebot"){
     msg.reply("Testing 123...");
   }
-}
+});
