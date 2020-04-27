@@ -1,0 +1,14 @@
+{
+  "name": "compilebot",
+  "version": "1.0.0",
+  "description": "compile or interpret, and run code and see the output on discord.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  }
+}
