@@ -57,7 +57,7 @@ class Interpreter
          result[index_result]['paramaters'] = [];
        } else if(cmd2_split[x].includes(block_start)){
          var index_arr = cmd2_split[x].substring(block_start.length,cmd2_split[x].length - block_end.length);
-         result[index_result]['paramaters'].push(arr[index_arr].substring(block_start.length, arr[index_arr].length - block_end.length);
+         result[index_result]['paramaters'].push(arr[index_arr].substring(block_start.length, arr[index_arr].length - block_end.length));
        } else {
          result[index_result]['paramaters'].push(cmd2_split[x]);
        }
