@@ -10,7 +10,5 @@ Bot.on('ready', function(){
 });
 
 Bot.on('message', function(msg){
-  if(Interpreter.isCBCommand(msg.content)){
-    msg.reply("CompileBot is Responding.");
-  }
+  msg.reply(Interpreter.json(msg.content);
 });
