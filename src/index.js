@@ -10,5 +10,7 @@ Bot.on('ready', function(){
 });
 
 Bot.on('message', function(msg){
-  msg.reply(Interpreter.json(msg.content));
+  if(Interpreter.isCBCommand(msg.content)){
+    msg.reply(JSON.stringify(Interpreter.json(msg.content)));
+  }
 });
