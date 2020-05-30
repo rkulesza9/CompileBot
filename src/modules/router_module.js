@@ -14,7 +14,16 @@ class Router{
 
 	build_router(){
 		var route = {
-			"compile" : this.module_CRI
+			"console" : this.module_CRI,
+			"compile" : this.module_CRI,
+			"run" : this.module_CRI,
+			"lang" : this.module_CRI,
+			"new" : this.module_FIO,
+			"append" : this.module_FIO,
+			"write" : this.module_FIO,
+			"read" : this.module_FIO,
+			"delete" : this.module_FIO,
+			"files" : this.module_FIO
 		};
    
     return route;
