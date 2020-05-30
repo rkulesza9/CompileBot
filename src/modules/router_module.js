@@ -29,7 +29,7 @@ class Router{
 			//sets processed flag to true, appends additional cmds for output module
 			//expectation: one command is complete left to right before another command begin
 			//console.log(this.module_router[cmd.subroutine]);
-      cmd_json = this.module_router[cmd.subroutine].process(cmd_json, x);
+      		cmd_json = this.module_router[cmd.subroutine].process(cmd_json, x);
 		}
 	}
 
