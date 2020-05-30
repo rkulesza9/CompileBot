@@ -3,7 +3,7 @@ const Bot = new Discord.Client();
 const Token = "Njk4NDIyMDk0NTcyMjkwMDk4.XqdICQ.rTvA62jCxiJDpmk0wl6o4DoPKOM";
 
 const Interpreter = require("./modules/interpreter_module").start();
-const Router = require("./modules/router_module").start()
+const Router = require("./modules/router_module").start();
 
 Bot.login(Token);
 Bot.on('ready', function(){

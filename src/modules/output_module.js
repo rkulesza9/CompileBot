@@ -11,5 +11,7 @@ class Output_Module {
 
 	process(cmd_json, index_start){
 		console.log(this.test);
+   
+   return cmd_json;
 	}
 }
