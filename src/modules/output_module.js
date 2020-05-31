@@ -9,9 +9,9 @@ class Output_Module {
 		this.test = "Output Module";
 	}
 
-	process(cmd_json, index_start){
+	process(cmd){
 		console.log(this.test);
    
-   		return cmd_json;
+   		return null;
 	}
 }

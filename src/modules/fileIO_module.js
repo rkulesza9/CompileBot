@@ -10,7 +10,7 @@ class FileIO_Module {
 		this.cmds = this.cmd_map();
 	}
 
-	process(cmd_json, index_start){
+	process(cmd){
 		var cmd_01 = cmd_json[index_start];
 		this.cmds[cmd_01.subroutine](cmd_json, index_start);
    		return cmd_json;
@@ -28,27 +28,27 @@ class FileIO_Module {
 		return map;
 	}
 
-	new(cmd_json, index_start){
+	new(cmd){
 		console.log("new");
 	}
 
-	append(cmd_json, index_start){
+	append(cmd){
 		console.log("append");
 	}
 
-	write(cmd_json, index_start){
+	write(cmd){
 		console.log("write");
 	}
 
-	read(cmd_json, index_start){
+	read(cmd){
 		console.log("read");
 	}
 
-	delete(cmd_json, index_start){
+	delete(cmd){
 		console.log("delete");
 	}
 
-	files(cmd_json, index_start){
+	files(cmd){
 		console.log("files");
 	}
 }

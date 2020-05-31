@@ -10,7 +10,7 @@ class CompileRunInterpret_Module {
 		this.cmds = this.cmd_map();
 	}
 
-	process(cmd_json, index_start){
+	process(cmd){
 		var cmd_01 = cmd_json[index_start];
 		this.cmds[cmd_01.subroutine](cmd_json, index_start);
    		return cmd_json;
@@ -26,19 +26,19 @@ class CompileRunInterpret_Module {
 		return map;
 	}
 
-	console(cmd_json, index_start){
+	console(cmd){
 		console.log("console");
 	}
 
-	compile(cmd_json, index_start){
+	compile(cmd){
 		console.log("compile");
 	}
 
-	run(cmd_json, index_start){
+	run(cmd){
 		console.log("run");
 	}
 
-	lang(cmd_json, index_start){
+	lang(cmd){
 		console.log("lang");
 	}
 	
