@@ -3,52 +3,45 @@ module.exports =
   start : function(){ return new FileIO_Module(); }
 };
 
+const fs = require('fs');
+
 class FileIO_Module {
 
 	constructor(){
 		this.test = "File IO Module";
-		this.cmds = this.cmd_map();
-	}
-
-	process(cmd){
-		var cmd_01 = cmd_json[index_start];
-		this.cmds[cmd_01.subroutine](cmd_json, index_start);
-   		return cmd_json;
-	}
-
-	cmd_map(){
-		var map = {
-			"new" : this.new,
-			"append" : this.append,
-			"write" : this.write,
-			"read" : this.read,
-			"delete" : this.delete,
-			"files" : this.files
-		};
-		return map;
 	}
 
 	new(cmd){
 		console.log("new");
+		var params = cmd.paramaters;
+
+		fs.writeFile(params[0], params[1]);
+
+		return { subroutine : "discord_reply", paramaters: "File Successfully Written" };
 	}
 
 	append(cmd){
 		console.log("append");
+		return json;
 	}
 
 	write(cmd){
 		console.log("write");
+		return json;
 	}
 
 	read(cmd){
 		console.log("read");
+		return json;
 	}
 
 	delete(cmd){
 		console.log("delete");
+		return json;
 	}
 
 	files(cmd){
 		console.log("files");
+		return json;
 	}
 }
