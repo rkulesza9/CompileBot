@@ -12,12 +12,14 @@ class FileIO_Module {
 	}
 
 	new(cmd){
-		console.log("new");
 		var params = cmd.paramaters;
 
-		fs.writeFile(params[0], params[1]);
+		fs.writeFile(params[0], params[1], (err) => {
+			if (err) throw err;
+			console.log('The file has been saved!');
+		});
 
-		return { subroutine : "discord_reply", paramaters: "File Successfully Written" };
+		return { subroutine : "console_log", paramaters: [`${params[0]} was saved successfully! Maybe. This is just a test.`] };
 	}
 
 	append(cmd){

@@ -23,7 +23,8 @@ class Router{
 			"write" : this.module_FIO.write,
 			"read" : this.module_FIO.read,
 			"delete" : this.module_FIO.delete,
-			"files" : this.module_FIO.files
+			"files" : this.module_FIO.files,
+			"console_log" : this.module_Output.console_log
 		};
    
     return route;
@@ -32,10 +33,9 @@ class Router{
 	route(cmd_json){
 		for(var x = 0; x < cmd_json.length; x++){
 			var cmd = cmd_json[x];
-      		var result = this.module_router[cmd.subroutine](cmd);
-      		if(result != null) cmd_json = cmd_json.push(result); //a module can produce json to be interpreted by another module (eg. output module)
+      		var result = this.module_router[cmd.subroutine](cmd); 
+      		if(result != null) cmd_json.push(result); //a module can produce json to be interpreted by another module (eg. output module)
 		}
-		return cmd_json;
 	}
 
 }

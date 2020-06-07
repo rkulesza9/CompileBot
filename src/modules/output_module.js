@@ -8,4 +8,9 @@ class Output_Module {
 	constructor(){
 		this.test = "Output Module";
 	}
+
+	console_log(cmd){
+		console.log(cmd.paramaters[0]);
+		return null;
+	}
 }

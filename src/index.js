@@ -12,6 +12,7 @@ Bot.on('ready', function(){
 
 Bot.on('message', function(msg){
   if(Interpreter.isCBCommand(msg.content)){
-    msg.reply(Router.route(Interpreter.json(msg.content)));
+    Router.route(Interpreter.json(msg.content));
+    msg.reply("recieved and processed without error...");
   }
 });
