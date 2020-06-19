@@ -16,11 +16,14 @@ class FileIO_Module {
 		var console_output = "";
 
 		fs.writeFile(params[0], params[1], (err) => {
-			if (err){
+			if(err){
 				console_output = `There was some kind of problem trying to write to ${params[0]}!`;
-			} 
-			console_output = `Successfully wrote to and saved ${params[0]}!`;
+			}
 		});
+
+		if(console_output == "") {
+			console_output = `Successfully wrote to and saved ${params[0]}!`;
+		}
 
 		return { subroutine : "output", paramaters: [console_output] };
 	}

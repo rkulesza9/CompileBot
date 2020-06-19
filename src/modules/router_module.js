@@ -43,8 +43,8 @@ class Router{
 		this.output_str += cmd.paramaters[0];
 		this.output_str += "\n";
 
-		console.log(cmd);
-		console.log(this.output_str);
+		console.log("cmd: "+cmd);
+		console.log("output_str: "+this.output_str);
 		return null;
 	}
 
