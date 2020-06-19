@@ -40,14 +40,15 @@ class Router{
 	}
 
 	output(cmd){
+		if(this.output_str) this.output_str += "\n";
+		else this.output_str = " ";
 		this.output_str += cmd.paramaters[0];
-		this.output_str += "\n";
 
 		console.log("cmd");
 		console.log(cmd);
 		console.log("output_str");
 		console.log(this.output_str);
-		
+
 		return null;
 	}
 
