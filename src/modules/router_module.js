@@ -25,7 +25,7 @@ class Router{
 			"read" : this.module_FIO.read,
 			"delete" : this.module_FIO.delete,
 			"files" : this.module_FIO.files,
-			"output" : output,
+			"output" : this.output,
 		};
    
     return route;
