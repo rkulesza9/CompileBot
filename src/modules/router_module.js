@@ -25,7 +25,7 @@ class Router{
 			"read" : this.module_FIO.read,
 			"delete" : this.module_FIO.delete,
 			"files" : this.module_FIO.files,
-			"output" : this.output
+			"output" : output,
 		};
    
     return route;
@@ -40,8 +40,8 @@ class Router{
 	}
 
 	output(cmd){
-		output += cmd.paramaters[0];
-		output += "\n";
+		output_str += cmd.paramaters[0];
+		output_str += "\n";
 		return null;
 	}
 
