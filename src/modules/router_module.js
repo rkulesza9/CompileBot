@@ -40,8 +40,8 @@ class Router{
 	}
 
 	output(cmd){
-		output_str += cmd.paramaters[0];
-		output_str += "\n";
+		this.output_str += cmd.paramaters[0];
+		this.output_str += "\n";
 		return null;
 	}
 
