@@ -10,23 +10,19 @@ class CompileRunInterpret_Module {
 	}
 
 	console(cmd){
-		console.log("console");
-		return json;
+		return { subroutine : "output", paramaters: ["Not Implemented"]};
 	}
 
 	compile(cmd){
-		console.log("compile");
-		return json;
+		return { subroutine : "output", paramaters: ["Not Implemented"]};
 	}
 
 	run(cmd){
-		console.log("run");
-		return json;
+		return { subroutine : "output", paramaters: ["Not Implemented"]};
 	}
 
 	lang(cmd){
-		console.log("lang");
-		return json;
+		return { subroutine : "output", paramaters: ["Not Implemented"]};
 	}
 	
 }

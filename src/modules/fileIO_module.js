@@ -13,37 +13,42 @@ class FileIO_Module {
 
 	new(cmd){
 		var params = cmd.paramaters;
+		var console_output = "";
 
 		fs.writeFile(params[0], params[1], (err) => {
-			if (err) throw err;
-			console.log('The file has been saved!');
+			if (err){
+				console_output = `There was some kind of problem trying to write to ${params[0]}!`;
+			} 
+			console_output = `Successfully wrote to and saved ${params[0]}!`;
 		});
 
-		return { subroutine : "console_log", paramaters: [`${params[0]} was saved successfully! Maybe. This is just a test.`] };
+		return { subroutine : "output", paramaters: [console_output] };
 	}
 
 	append(cmd){
-		console.log("append");
-		return json;
+		var params = cmd.paramaters;
+
+		fs.appendFile(params[0], params[1], (err) => {
+			if (err) throw err;
+			console.log('The file has been appended!');
+		});
+
+		return { subroutine : "output", paramaters: [`${params[0]} was saved successfully! Maybe. This is just a test.`] };
 	}
 
 	write(cmd){
-		console.log("write");
-		return json;
+		return new(cmd);
 	}
 
 	read(cmd){
-		console.log("read");
-		return json;
+		return { subroutine : "output", paramaters: ["Not Implemented"]};
 	}
 
 	delete(cmd){
-		console.log("delete");
-		return json;
+		return { subroutine : "output", paramaters: ["Not Implemented"]};
 	}
 
 	files(cmd){
-		console.log("files");
-		return json;
+		return { subroutine : "output", paramaters: ["Not Implemented"]};
 	}
 }
