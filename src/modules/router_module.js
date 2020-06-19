@@ -52,4 +52,8 @@ class Router{
 		return null;
 	}
 
+	get_output(){
+		return this.output_str;
+	}
+
 }
