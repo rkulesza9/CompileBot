@@ -13,6 +13,6 @@ Bot.on('ready', function(){
 Bot.on('message', function(msg){
   if(Interpreter.isCBCommand(msg.content)){
     Router.route(Interpreter.json(msg.content));
-    msg.reply(Router.output_str);
+    msg.reply(Router.get_output());
   }
 });
