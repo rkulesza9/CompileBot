@@ -9,7 +9,6 @@ class Router{
 		this.module_FIO = require("./fileIO_module").start();
 		this.module_CRI = require("./compileRunInterpret_module").start();
 		this.module_router = this.build_router();
-
 		this.output_str = "";
 	}
 
@@ -24,8 +23,7 @@ class Router{
 			"write" : this.module_FIO.write,
 			"read" : this.module_FIO.read,
 			"delete" : this.module_FIO.delete,
-			"files" : this.module_FIO.files,
-			"output" : this.output,
+			"files" : this.module_FIO.files
 		};
    
     return route;
@@ -34,20 +32,19 @@ class Router{
 	route(cmd_json){
 		for(var x = 0; x < cmd_json.length; x++){
 			var cmd = cmd_json[x];
-      		var result = this.module_router[cmd.subroutine](cmd); 
+
+			if(cmd.subroutine == "output"){
+				var result = this.output(cmd);
+			} else {
+				var result = this.module_router[cmd.subroutine](cmd); 
+			}
+
       		if(result != null) cmd_json.push(result); //a module can produce json to be interpreted by another module (eg. output module)
 		}
 	}
 
 	output(cmd){
-		if(this.output_str) this.output_str += "\n";
-		else this.output_str = " ";
 		this.output_str += cmd.paramaters[0];
-
-		console.log("cmd");
-		console.log(cmd);
-		console.log("output_str");
-		console.log(this.output_str);
 
 		return null;
 	}
