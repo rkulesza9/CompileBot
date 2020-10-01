@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const Bot = new Discord.Client();
-const Token = "Njk4NDIyMDk0NTcyMjkwMDk4.XqdICQ.rTvA62jCxiJDpmk0wl6o4DoPKOM";
+const Token = require("./credentials").token;
 
 const Interpreter = require("./modules/interpreter_module").start();
 const Router = require("./modules/router_module").start();
